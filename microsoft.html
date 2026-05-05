@@ -598,13 +598,13 @@ h1{font-size:24px;font-weight:600;margin-bottom:24px}
 .dl-pdf-btn{position:absolute;top:14px;right:24px;background:#0078d4;color:#fff;border:none;padding:8px 14px;border-radius:4px;font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:inherit;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:background .15s}
 .dl-pdf-btn:hover{background:#005ea2}
 .invoice-card{position:relative}
-.invoice-card.printing{position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:#fff;overflow:auto;padding:40px}
+#print-only-container{display:none}
 @media print {
-  body > *:not(#invoice-print-target){display:none !important}
-  #invoice-print-target{display:block !important;position:static !important;padding:20px !important;background:#fff !important}
-  #invoice-print-target .back-top, #invoice-print-target .dl-pdf-btn{display:none !important}
-  #ms-login-overlay{display:none !important}
-  @page{margin:14mm}
+  body.printing-mode > *:not(#print-only-container){display:none !important}
+  body.printing-mode #print-only-container{display:block !important;background:#fff !important;padding:0 !important;margin:0 !important}
+  body.printing-mode #print-only-container .invoice-card{display:block !important;box-shadow:none !important;border:none !important;padding:20px !important;margin:0 !important;max-width:100% !important}
+  body.printing-mode .back-top, body.printing-mode .dl-pdf-btn, body.printing-mode #ms-login-overlay{display:none !important}
+  @page{margin:14mm;size:A4}
 }
 </style>
 
@@ -6293,22 +6293,36 @@ document.getElementById('orders').innerHTML = html;
 <script id="invoice-dl-js">
 window.__downloadInvoice = function(card){
   if(!card) return;
-  var prevId = card.id;
-  var prevAttr = 'data-orig-id-' + Math.random().toString(36).slice(2);
-  card.setAttribute(prevAttr, prevId);
-  card.id = 'invoice-print-target';
-  // Set document title for default PDF filename
-  var num = (prevId || '').replace('fattura-','');
+  // Crea un container al livello body per la stampa, con clone della card
+  var existing = document.getElementById('print-only-container');
+  if(existing) existing.remove();
+  var container = document.createElement('div');
+  container.id = 'print-only-container';
+  var clone = card.cloneNode(true);
+  // Pulisci elementi UI dal clone (back-top, btn pdf)
+  var rm = clone.querySelectorAll('.back-top, .dl-pdf-btn');
+  rm.forEach(function(el){ el.remove(); });
+  container.appendChild(clone);
+  document.body.appendChild(container);
+  document.body.classList.add('printing-mode');
+  // Imposta titolo per nome file PDF
+  var num = (card.id || '').replace('fattura-','');
   var origTitle = document.title;
   document.title = 'Fattura_Microsoft_' + num;
+  // Funzione di cleanup
+  function cleanup(){
+    document.body.classList.remove('printing-mode');
+    var c = document.getElementById('print-only-container');
+    if(c) c.remove();
+    document.title = origTitle;
+    window.removeEventListener('afterprint', cleanup);
+  }
+  window.addEventListener('afterprint', cleanup);
   setTimeout(function(){
     window.print();
-    setTimeout(function(){
-      card.id = prevId;
-      card.removeAttribute(prevAttr);
-      document.title = origTitle;
-    }, 500);
-  }, 100);
+    // Fallback cleanup nel caso afterprint non scatti
+    setTimeout(cleanup, 1500);
+  }, 80);
 };
 </script>
 
