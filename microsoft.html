@@ -590,6 +590,24 @@ h1{font-size:24px;font-weight:600;margin-bottom:24px}
 .__merged_main{width:100%;flex:1;}
 @media print { .__merged_nav{display:none !important;} }
 </style>
+
+<style id="invoice-extra-css">
+.inv-product{font-size:13px;line-height:1.5}
+.inv-product strong{display:block;color:#323130;font-size:14px;font-weight:600;margin-bottom:2px}
+.inv-product-sub{color:#605e5c;font-size:12px}
+.dl-pdf-btn{position:absolute;top:14px;right:24px;background:#0078d4;color:#fff;border:none;padding:8px 14px;border-radius:4px;font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-family:inherit;box-shadow:0 1px 3px rgba(0,0,0,.12);transition:background .15s}
+.dl-pdf-btn:hover{background:#005ea2}
+.invoice-card{position:relative}
+.invoice-card.printing{position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:#fff;overflow:auto;padding:40px}
+@media print {
+  body > *:not(#invoice-print-target){display:none !important}
+  #invoice-print-target{display:block !important;position:static !important;padding:20px !important;background:#fff !important}
+  #invoice-print-target .back-top, #invoice-print-target .dl-pdf-btn{display:none !important}
+  #ms-login-overlay{display:none !important}
+  @page{margin:14mm}
+}
+</style>
+
 </head>
 <body>
 <!-- MS_LOGIN_START -->
@@ -2330,6 +2348,7 @@ document.getElementById('orders').innerHTML = html;
   
 <div class="invoice-card" id="fattura-6387881112345678911">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2364,7 +2383,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2392,6 +2411,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881123456789122">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2426,7 +2446,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2454,6 +2474,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881134567891233">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2488,7 +2509,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2516,6 +2537,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881145678912344">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2550,7 +2572,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2578,6 +2600,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881156789123455">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2612,7 +2635,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2640,6 +2663,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881167891234566">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2674,7 +2698,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2702,6 +2726,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881178912345677">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2736,7 +2761,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2764,6 +2789,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881189123456788">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2798,7 +2824,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2826,6 +2852,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881191234567899">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2860,7 +2887,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2888,6 +2915,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881212345678910">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2922,7 +2950,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -2950,6 +2978,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881223456789121">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -2984,7 +3013,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3012,6 +3041,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6387881234567891232">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3046,7 +3076,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Basic</strong><br><span class="inv-product-sub">10 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3074,6 +3104,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3108,7 +3139,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3136,6 +3167,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3170,7 +3202,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3198,6 +3230,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841456789123456">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3232,7 +3265,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3260,6 +3293,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841567891234567">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3294,7 +3328,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3322,6 +3356,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841678912345678">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3356,7 +3391,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3384,6 +3419,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841789123456789">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3418,7 +3454,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3446,6 +3482,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841891234567891">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3480,7 +3517,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3508,6 +3545,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695841912345678912">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3542,7 +3580,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3570,6 +3608,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695842123456789123">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3604,7 +3643,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3632,6 +3671,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695842234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3666,7 +3706,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3694,6 +3734,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695842345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3728,7 +3769,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3756,6 +3797,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-7695842456789123456">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3790,7 +3832,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3818,6 +3860,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3852,7 +3895,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3880,6 +3923,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3914,7 +3958,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -3942,6 +3986,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691456789123456">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -3976,7 +4021,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4004,6 +4049,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691567891234567">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4038,7 +4084,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4066,6 +4112,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691678912345678">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4100,7 +4147,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4128,6 +4175,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691789123456789">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4162,7 +4210,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4190,6 +4238,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691891234567891">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4224,7 +4273,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4252,6 +4301,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525691912345678912">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4286,7 +4336,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4314,6 +4364,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525692123456789123">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4348,7 +4399,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4376,6 +4427,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525692234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4410,7 +4462,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4438,6 +4490,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525692345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4472,7 +4525,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4500,6 +4553,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-4525692456789123456">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4534,7 +4588,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Standard</strong><br><span class="inv-product-sub">15 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4562,6 +4616,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4596,7 +4651,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4624,6 +4679,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4658,7 +4714,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4686,6 +4742,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421456789123456">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4720,7 +4777,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4748,6 +4805,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421567891234567">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4782,7 +4840,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4810,6 +4868,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421678912345678">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4844,7 +4903,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4872,6 +4931,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421789123456789">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4906,7 +4966,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4934,6 +4994,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421891234567891">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -4968,7 +5029,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -4996,6 +5057,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987421912345678912">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5030,7 +5092,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5058,6 +5120,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987422123456789123">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5092,7 +5155,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5120,6 +5183,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987422234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5154,7 +5218,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5182,6 +5246,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987422345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5216,7 +5281,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5244,6 +5309,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-6987422456789123456">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5278,7 +5344,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5306,6 +5372,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412123456789123">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5340,7 +5407,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5368,6 +5435,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5402,7 +5470,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5430,6 +5498,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5464,7 +5533,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5492,6 +5561,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412456789123456">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5526,7 +5596,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5554,6 +5624,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412567891234567">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5588,7 +5659,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5616,6 +5687,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412678912345678">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5650,7 +5722,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5678,6 +5750,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412789123456789">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5712,7 +5785,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5740,6 +5813,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412891234567891">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5774,7 +5848,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5802,6 +5876,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865412912345678912">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5836,7 +5911,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5864,6 +5939,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865413123456789123">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5898,7 +5974,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5926,6 +6002,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865413234567891234">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -5960,7 +6037,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -5988,6 +6065,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-9865413345678912345">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -6022,7 +6100,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -6050,6 +6128,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-5456985541291234565">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -6084,7 +6163,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -6112,6 +6191,7 @@ document.getElementById('orders').innerHTML = html;
 
 <div class="invoice-card" id="fattura-5456986589412566545">
   <a href="#page-fatture" class="back-top" onclick="if(window.__SHOW_ONLY_INVOICE__){event.preventDefault();window.__showAllInvoices();}">&uarr; Indice fatture</a>
+  <button class="dl-pdf-btn" onclick="window.__downloadInvoice(this.closest('.invoice-card'))" data-testid="dl-pdf-btn" type="button">📄 Scarica PDF</button>
   <div class="inv-header">
     <div class="inv-left">
       <a href="https://account.microsoft.com/?refd=account.microsoft.com" target="_blank" rel="noopener" class="inv-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 23" width="108" height="23" aria-label="Microsoft">
@@ -6146,7 +6226,7 @@ document.getElementById('orders').innerHTML = html;
     </thead>
     <tbody>
       <tr>
-        <td>&nbsp;</td>
+        <td><div class="inv-product"><strong>Microsoft 365 Business Premium</strong><br><span class="inv-product-sub">20 licenze utente</span></div></td>
         <td class="qty">1.0</td>
         <td>
           <div class="inv-totals">
@@ -6209,5 +6289,28 @@ document.getElementById('orders').innerHTML = html;
   if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', fromHash); } else { fromHash(); }
 })();
 </script>
+
+<script id="invoice-dl-js">
+window.__downloadInvoice = function(card){
+  if(!card) return;
+  var prevId = card.id;
+  var prevAttr = 'data-orig-id-' + Math.random().toString(36).slice(2);
+  card.setAttribute(prevAttr, prevId);
+  card.id = 'invoice-print-target';
+  // Set document title for default PDF filename
+  var num = (prevId || '').replace('fattura-','');
+  var origTitle = document.title;
+  document.title = 'Fattura_Microsoft_' + num;
+  setTimeout(function(){
+    window.print();
+    setTimeout(function(){
+      card.id = prevId;
+      card.removeAttribute(prevAttr);
+      document.title = origTitle;
+    }, 500);
+  }, 100);
+};
+</script>
+
 </body>
 </html>
